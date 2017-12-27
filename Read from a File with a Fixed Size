@@ -1,0 +1,27 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    string fileLine;
+    // Open an Input Stream
+    ifstream inFile;
+
+    // Open the File
+    inFile.open("demo.txt");
+
+    // Read from the File
+    cout << "Reading from the file" << endl;
+
+    // Read from inFile object and store in the variable, FileLine
+    for(int x = 0; x < 5; x++) {
+        inFile >> fileLine;
+        cout << fileLine << endl;
+    }
+
+    // CLose the file
+    inFile.close();
+
+    return 0;
+}
