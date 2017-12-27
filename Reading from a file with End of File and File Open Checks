@@ -1,0 +1,37 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    // Variable Declarations
+    string fileLine;
+    string fileName;
+
+    // Open an Input Stream
+    ifstream inFile;
+
+    // Ask User for Filename and STORE in variable fileName
+    cout << "Please enter the filename: ";
+    cin >> fileName;
+    cout << endl;
+
+    // Open the File according to input from user stored in fileName
+    inFile.open(fileName);
+
+    // Check to see if file has been opened successfully
+    if (inFile) {
+        // Read from the File
+        cout << "Reading from the file" << endl;
+
+        while(inFile >> fileLine) {
+            // Output the data
+            cout << fileLine << endl;
+        }
+        // CLose the file
+        inFile.close();
+    } else {
+        cout << "The file could not be opened" << endl;
+    }
+    return 0;
+}
